@@ -7,16 +7,17 @@
         SizeChanged="Window_SizeChanged">
     <Grid>
         <ComboBox x:Name="ThemeSelector"
-                  SelectionChanged="ThemeSelector_SelectionChanged"
-                  Margin="10"
-                  Width="150"
-                  HorizontalAlignment="Left"
-                  VerticalAlignment="Top">
-            <ComboBoxItem Content="Default" />
-            <ComboBoxItem Content="Dark" />
-            <ComboBoxItem Content="Solarized" />
-            <ComboBoxItem Content="High Contrast" />
-        </ComboBox>
+          SelectionChanged="ThemeSelector_SelectionChanged"
+          Margin="10"
+          Width="200"
+          HorizontalAlignment="Left"
+          VerticalAlignment="Top">
+           <ComboBoxItem Content="Lilac"/>
+           <ComboBoxItem Content="Lavender"/>
+           <ComboBoxItem Content="Smoke"/>
+           <ComboBoxItem Content="Grape"/>
+       </ComboBox>
+
 
         <!-- Your UI layout goes here -->
 

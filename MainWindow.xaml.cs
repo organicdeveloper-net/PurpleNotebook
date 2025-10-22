@@ -2,6 +2,8 @@ using System;
 using System.IO;
 using System.Media;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Media;
 
 namespace PurpleNotebook
 {
@@ -19,6 +21,18 @@ namespace PurpleNotebook
         {
             double aspectRatio = 0.75;
             this.Width = this.Height * aspectRatio;
+        }
+
+        private void ThemeSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (ThemeSelector.SelectedItem is ComboBoxItem selectedItem)
+            {
+                string themeName = selectedItem.Content.ToString();
+                Brush backgroundBrush = GetThemeBrush(themeName);
+                this.Background = backgroundBrush;
+
+                Console.WriteLine($"[THEME] Applied theme: {themeName}");
+            }
         }
 
         #endregion
@@ -57,6 +71,27 @@ namespace PurpleNotebook
         {
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             Console.WriteLine($"[BOOT] Notebook launched at {timestamp}");
+        }
+
+        #endregion
+
+        #region Theme Logic
+
+        private Brush GetThemeBrush(string themeName)
+        {
+            switch (themeName)
+            {
+                case "Lilac":
+                    return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C33CB"));
+                case "Lavender":
+                    return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#A383E8"));
+                case "Smoke":
+                    return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#62679C"));
+                case "Grape":
+                    return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8648FF"));
+                default:
+                    return new SolidColorBrush(Colors.White);
+            }
         }
 
         #endregion
