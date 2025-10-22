@@ -6,20 +6,38 @@
         Width="800"
         SizeChanged="Window_SizeChanged">
     <Grid>
-        <ComboBox x:Name="ThemeSelector"
-          SelectionChanged="ThemeSelector_SelectionChanged"
-          Margin="10"
-          Width="200"
-          HorizontalAlignment="Left"
-          VerticalAlignment="Top">
-           <ComboBoxItem Content="Lilac"/>
-           <ComboBoxItem Content="Lavender"/>
-           <ComboBoxItem Content="Smoke"/>
-           <ComboBoxItem Content="Grape"/>
-       </ComboBox>
+    <ComboBox x:Name="ThemeSelector"
+              SelectionChanged="ThemeSelector_SelectionChanged"
+              Margin="10"
+              Width="200"
+              HorizontalAlignment="Left"
+              VerticalAlignment="Top">
+        <ComboBoxItem Content="Lilac"/>
+        <ComboBoxItem Content="Lavender"/>
+        <ComboBoxItem Content="Smoke"/>
+        <ComboBoxItem Content="Grape"/>
+    </ComboBox>
+    <TextBlock Text="Made With ❤️ by de'deluxe"
+           FontSize="12"
+           Foreground="White"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           Margin="0,0,0,10"/>
 
+    <Button x:Name="MyButton"
+            Content="New Note"
+            Width="120"
+            Height="40"
+            Margin="10"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"/>
 
-        <!-- Your UI layout goes here -->
+    <Label x:Name="MyLabel"
+           Content="Welcome to PurpleNotebook"
+           FontSize="16"
+           HorizontalAlignment="Center"
+           VerticalAlignment="Bottom"
+           Margin="0,0,0,20"/>
+</Grid>
 
-    </Grid>
 </Window>
