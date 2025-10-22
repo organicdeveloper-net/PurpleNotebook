@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Example theme brushes -->
+    <SolidColorBrush x:Key="Theme1" Color="#FF1A1A1A"/> <!-- Charcoal Grey -->
+    <SolidColorBrush x:Key="Theme2" Color="#FFB19CD9"/> <!-- Fuchsia Purple -->
+    <SolidColorBrush x:Key="Theme3" Color="#FF4682B4"/> <!-- Steel Blue -->
+    <SolidColorBrush x:Key="Theme4" Color="#FF2E8B57"/> <!-- Sea Green -->
+    <SolidColorBrush x:Key="Theme5" Color="#FFDAA520"/> <!-- Goldenrod -->
+    <SolidColorBrush x:Key="Theme6" Color="#FF8B0000"/> <!-- Deep Red -->
+    <SolidColorBrush x:Key="Theme7" Color="#FF4B0082"/> <!-- Indigo -->
+    <SolidColorBrush x:Key="Theme8" Color="#FF708090"/> <!-- Slate Gray -->
+    <SolidColorBrush x:Key="Theme9" Color="#FF00CED1"/> <!-- Dark Turquoise -->
+    <SolidColorBrush x:Key="Theme10" Color="#FF9932CC"/> <!-- Dark Orchid -->
+    <SolidColorBrush x:Key="Theme11" Color="#FF556B2F"/> <!-- Dark Olive Green -->
+    <SolidColorBrush x:Key="Theme12" Color="#FF8B4513"/> <!-- Saddle Brown -->
+
+</ResourceDictionary>
+ 

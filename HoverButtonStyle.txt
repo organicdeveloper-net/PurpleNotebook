@@ -1,0 +1,4 @@
+<Button x:Name="TagButton"
+        Content="🏷️ Add Tag"
+        Style="{StaticResource HoverButtonStyle}"
+        Click="TagButton_Click"/>

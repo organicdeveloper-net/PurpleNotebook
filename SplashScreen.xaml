@@ -1,0 +1,26 @@
+<Window x:Class="PurpleNotebook.SplashScreen"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="SplashScreen"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Width="600" Height="500"
+        WindowStartupLocation="CenterScreen"
+        ShowInTaskbar="False"
+        Topmost="True">
+
+    <!-- Matte purple backdrop -->
+    <Grid Background="#FFB19CD9">
+        <!-- Splash video playback -->
+        <MediaElement x:Name="SplashVideo"
+                      Source="Assets/splash.mp4"
+                      LoadedBehavior="Play"
+                      UnloadedBehavior="Stop"
+                      Stretch="UniformToFill"
+                      MediaEnded="SplashVideo_MediaEnded"
+                      Margin="0"
+                      IsMuted="False"
+                      Volume="1.0"/>
+    </Grid>
+</Window>
