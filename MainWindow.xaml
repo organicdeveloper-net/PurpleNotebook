@@ -31,7 +31,6 @@
             Margin="10"
             HorizontalAlignment="Center"
             VerticalAlignment="Center"/>
-
     <Label x:Name="MyLabel"
            Content="Welcome to PurpleNotebook"
            FontSize="16"
