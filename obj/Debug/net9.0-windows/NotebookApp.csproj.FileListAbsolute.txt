@@ -3,13 +3,12 @@ C:\Users\Watermelon-Apple\Desktop\Purple Notebook\bin\Debug\net9.0-windows\Noteb
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\bin\Debug\net9.0-windows\NotebookApp.runtimeconfig.json
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\bin\Debug\net9.0-windows\NotebookApp.dll
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\bin\Debug\net9.0-windows\NotebookApp.pdb
-C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\Appxaml.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\MainWindow.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\SplashScreen.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\TagInputDialog.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\ThemeManager.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\Window.Resources.baml
-C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\Appxaml.g.cs
+C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\App.baml
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\MainWindow.g.cs
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\NoteEditor.g.cs
 C:\Users\Watermelon-Apple\Desktop\Purple Notebook\obj\Debug\net9.0-windows\SplashScreen.g.cs

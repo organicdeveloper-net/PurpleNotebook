@@ -1,5 +1,18 @@
 <Application x:Class="PurpleNotebook.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="MainWindow.xaml">
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Application.Resources>
+        <ImageBrush x:Key="bg_notebook" ImageSource="assets/bg_notebook.png" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_abstract1" ImageSource="assets/bg_abstract1.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_abstract2" ImageSource="assets/bg_abstract2.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_ellipses" ImageSource="assets/bg_ellipses.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_gradient1" ImageSource="assets/bg_gradient1.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_gradient2" ImageSource="assets/bg_gradient2.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_gradient3" ImageSource="assets/bg_gradient3.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_pine" ImageSource="assets/bg_pine.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_spectrum1" ImageSource="assets/bg_spectrum1.jpeg" Stretch="UniformToFill"/>
+        <ImageBrush x:Key="bg_spectrum2" ImageSource="assets/bg_spectrum2.jpeg" Stretch="UniformToFill"/>
+    </Application.Resources>
+
 </Application>
