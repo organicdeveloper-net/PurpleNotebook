@@ -97,10 +97,10 @@
 
         <!-- Signature -->
         <TextBlock Grid.Row="6"
-                   Text="Made With ❤️ by de'deluxe"
-                   FontSize="12"
-                   Foreground="White"
-                   HorizontalAlignment="Center"
-                   Margin="0,0,0,10"/>
+           Text="Made With Love by de'deluxe"
+           FontSize="12"
+           Foreground="White"
+           HorizontalAlignment="Center"
+           Margin="0,0,0,10"/>
     </Grid>
 </Window>
