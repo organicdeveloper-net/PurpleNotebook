@@ -1,4 +1,4 @@
-# 🐘 Purple Notebook
+# 🍇 Purple Notebook
 
 A modular, legacy-safe note-taking application built with WPF and .NET 8 — designed for clarity, control, and creative expression.
 
