@@ -1,5 +1,9 @@
 # 🍇 Purple Notebook
 
+![Version](https://img.shields.io/badge/version-v1.0-purple)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Ubuntu-blue)
+![Status](https://img.shields.io/badge/status-legacy--safe-green)
+
 A modular, legacy-safe note-taking application built with WPF and .NET 8 — designed for clarity, control, and creative expression.
 
 ---
