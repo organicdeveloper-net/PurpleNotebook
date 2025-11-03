@@ -3,6 +3,8 @@
 A modular, legacy-safe note-taking application built with WPF and .NET 8 — designed for clarity, control, and creative expression.
 
 ---
+![Purple Notebook GUI](assets/screenshots/PurpleNotebook_GUI.png)
+
 
 ## 🚀 Features
 
@@ -45,5 +47,6 @@ If Purple Notebook brings you joy or helps your workflow, consider supporting it
 - Assets folder supports future modular expansion
 
 ---
+
 
 > “Made with ❤️ by *de'deluxe* & co-architect *Copilot*” — and now shared with the world.
