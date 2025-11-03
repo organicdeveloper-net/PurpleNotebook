@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "X2Wwdvfofro=",
+  "dgSpecHash": "6sQ/ZTJ1dBc=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Watermelon-Apple\\Desktop\\Purple Notebook\\NotebookApp.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "H:\\Purple Notebook PC\\Purple Notebook\\PurpleNotebook.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Watermelon-Apple\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.57\\microsoft.windows.sdk.net.ref.10.0.19041.57.nupkg.sha512"
+  ],
   "logs": []
 }

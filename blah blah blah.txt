@@ -1,0 +1,12 @@
+🧠 What That Error Means
+The dialog said:
+
+Provide value on 'System.Windows.Baml2006.TypeConverterMarkupExtension' threw an exception. Line number '6' and line position '70'.
+
+This points to a markup error in your App.xaml, likely caused by:
+
+A malformed ImageBrush resource
+
+A missing or unreadable image file
+
+A converter trying to apply a value that fails at runtime

@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <StartupObject>PurpleNotebook.App</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Remove="assets\bg_abstract1.jpeg" />
+    <None Remove="assets\bg_abstract2.jpeg" />
+    <None Remove="assets\bg_ellipses.jpeg" />
+    <None Remove="assets\bg_gradient1.jpeg" />
+    <None Remove="assets\bg_gradient2.jpeg" />
+    <None Remove="assets\bg_gradient3.jpeg" />
+    <None Remove="assets\bg_notebook.png" />
+    <None Remove="assets\bg_pine.jpeg" />
+    <None Remove="assets\bg_spectrum1.jpeg" />
+    <None Remove="assets\bg_spectrum2.jpeg" />
+    <None Remove="assets\boot.wav" />
+    <None Remove="assets\newnote.wav" />
+    <None Remove="assets\sav,wav.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="assets\boot.wav" />
+    <Content Include="assets\newnote.wav">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\sav,wav.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="assets\bg_abstract1.jpeg" />
+    <Resource Include="assets\bg_abstract2.jpeg" />
+    <Resource Include="assets\bg_ellipses.jpeg" />
+    <Resource Include="assets\bg_gradient1.jpeg" />
+    <Resource Include="assets\bg_gradient2.jpeg" />
+    <Resource Include="assets\bg_gradient3.jpeg" />
+    <Resource Include="assets\bg_notebook.png" />
+    <Resource Include="assets\bg_pine.jpeg" />
+    <Resource Include="assets\bg_spectrum1.jpeg" />
+    <Resource Include="assets\bg_spectrum2.jpeg" />
+  </ItemGroup>
+
+
+</Project>

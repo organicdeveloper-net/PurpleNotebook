@@ -21,7 +21,7 @@
         <ComboBox x:Name="ThemeSelector"
                   Grid.Row="0"
                   SelectionChanged="ThemeSelector_SelectionChanged"
-                  Width="200"
+                  Width="100"
                   HorizontalAlignment="Left"
                   Margin="0,0,0,10">
             <ComboBoxItem Content="Lilac"/>
@@ -34,7 +34,7 @@
         <ComboBox x:Name="BackgroundSelector"
                   Grid.Row="1"
                   SelectionChanged="BackgroundSelector_SelectionChanged"
-                  Width="200"
+                  Width="100"
                   HorizontalAlignment="Left"
                   Margin="0,0,0,10">
             <ComboBoxItem Content="Notebook"/>
@@ -50,18 +50,12 @@
         </ComboBox>
 
         <!-- New Note Button -->
-        <Button x:Name="MyButton"
-                Grid.Row="2"
-                Content="New Note"
-                Width="120"
-                Height="40"
-                HorizontalAlignment="Center"
-                Margin="0,0,0,10"/>
+      
 
         <!-- Welcome Label -->
         <Label x:Name="MyLabel"
                Grid.Row="3"
-               Content="Welcome to Purple Notebook"
+               Content="Purple Notebook"
                FontSize="16"
                FontWeight="Bold"
                HorizontalAlignment="Center"
@@ -83,16 +77,25 @@
                     Orientation="Horizontal"
                     HorizontalAlignment="Center"
                     Margin="0,10,0,10">
-            <Button x:Name="SaveNote"
-                    Content="Save"
-                    Width="100"
-                    Margin="5"
-                    Click="SaveNote_Click"/>
+            
             <Button x:Name="SaveNoteAs"
                     Content="Save As"
                     Width="100"
                     Margin="5"
                     Click="SaveNoteAs_Click"/>
+            <Button x:Name="btnAddNote"
+                    Content="New Note"
+                    Click="btnAddNote_Click"
+                    Background="#FF8000B0"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    Padding="10,5"
+                    Margin="5"
+                    BorderBrush="#FF5A0080"
+                    BorderThickness="2"
+                    HorizontalAlignment="Right"
+                    Width="100" />
+
         </StackPanel>
 
         <!-- Signature -->

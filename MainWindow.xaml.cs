@@ -1,4 +1,4 @@
-using Microsoft.Win32;
+﻿using Microsoft.Win32;
 using System;
 using System.IO;
 using System.Media;
@@ -14,21 +14,20 @@ namespace PurpleNotebook
         private string currentBackground = "notebook";
 
         public MainWindow()
-{
-    try
-    {
-        InitializeComponent();
-        Console.WriteLine("[INFO] MainWindow constructor triggered.");
-        BootSequence();
-    }
-    catch (Exception ex)
-    {
-        Console.WriteLine($"[ERROR] MainWindow failed to initialize: {ex.Message}");
-        MessageBox.Show("Something went wrong during startup:\n" + ex.Message, "Startup Error", MessageBoxButton.OK, MessageBoxImage.Error);
-    }
-}
+        {
+            InitializeComponent();
 
-
+            try
+            {
+                Console.WriteLine("[INFO] MainWindow constructor triggered.");
+                BootSequence();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] MainWindow failed to initialize:\n{ex}");
+                MessageBox.Show("Something went wrong during startup:\n" + ex.Message, "Startup Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
 
         #region Window Events
 
@@ -50,8 +49,7 @@ namespace PurpleNotebook
                 Brush backgroundBrush = GetThemeBrush(currentTheme);
                 this.Background = backgroundBrush;
 
-                MyButton.Background = backgroundBrush;
-                MyButton.Foreground = Brushes.White;
+               
                 MyLabel.Foreground = Brushes.White;
 
                 SaveThemePreference(currentTheme);
@@ -61,14 +59,14 @@ namespace PurpleNotebook
 
         private Brush GetThemeBrush(string themeName)
         {
-            switch (themeName)
+            return themeName switch
             {
-                case "Lilac": return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C33CB"));
-                case "Lavender": return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#A383E8"));
-                case "Smoke": return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#62679C"));
-                case "Grape": return new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8648FF"));
-                default: return new SolidColorBrush(Colors.White);
-            }
+                "Lilac" => new SolidColorBrush((Color)ColorConverter.ConvertFromString("#7C33CB")),
+                "Lavender" => new SolidColorBrush((Color)ColorConverter.ConvertFromString("#A383E8")),
+                "Smoke" => new SolidColorBrush((Color)ColorConverter.ConvertFromString("#62679C")),
+                "Grape" => new SolidColorBrush((Color)ColorConverter.ConvertFromString("#8648FF")),
+                _ => new SolidColorBrush(Colors.White),
+            };
         }
 
         private void SaveThemePreference(string themeName)
@@ -89,21 +87,31 @@ namespace PurpleNotebook
 
         private void BackgroundSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (BackgroundSelector.SelectedItem is ComboBoxItem selectedItem)
+            try
             {
-                currentBackground = selectedItem.Content.ToString().Replace(" ", "").ToLower();
-                string brushKey = $"bg_{currentBackground}";
+                if (BackgroundSelector.SelectedItem is ComboBoxItem selectedItem)
+                {
+                    currentBackground = selectedItem.Content.ToString().Replace(" ", "").ToLower();
+                    string brushKey = $"bg_{currentBackground}";
+                    Console.WriteLine($"[BG] User selected: {brushKey}");
 
-                if (Application.Current.Resources[brushKey] is ImageBrush brush)
-                {
-                    MainGrid.Background = brush;
-                    SaveBackgroundPreference(currentBackground);
-                    Console.WriteLine($"[THEME] Background switched to {brushKey} at {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+                    if (Application.Current.Resources[brushKey] is ImageBrush brush)
+                    {
+                        MainGrid.Background = brush;
+                        SaveBackgroundPreference(currentBackground);
+                        Console.WriteLine($"[BG] Background switched to {brushKey} at {DateTime.Now:yyyy-MM-dd HH:mm:ss}");
+                    }
+                    else
+                    {
+                        Console.WriteLine($"[WARN] Background brush '{brushKey}' not found. Using fallback.");
+                        MainGrid.Background = Brushes.White;
+                    }
                 }
-                else
-                {
-                    Console.WriteLine($"[ERROR] Background brush '{brushKey}' not found.");
-                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Background selection failed:\n{ex}");
+                MessageBox.Show("Background selection failed:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -125,43 +133,59 @@ namespace PurpleNotebook
 
         private void BootSequence()
         {
-            PlayBootSound();
-            LogBootTimestamp();
-
-            currentTheme = LoadThemePreference();
-            Brush themeBrush = GetThemeBrush(currentTheme);
-            this.Background = themeBrush;
-
-            MyButton.Background = themeBrush;
-            MyButton.Foreground = Brushes.White;
-            MyLabel.Foreground = Brushes.White;
-
-            foreach (ComboBoxItem item in ThemeSelector.Items)
+            try
             {
-                if (item.Content.ToString() == currentTheme)
+                PlayBootSound();
+                LogBootTimestamp();
+
+                currentTheme = LoadThemePreference();
+                Brush themeBrush = GetThemeBrush(currentTheme);
+                this.Background = themeBrush;
+
+                
+
+                MyLabel.Foreground = Brushes.White;
+
+                foreach (ComboBoxItem item in ThemeSelector.Items)
                 {
-                    ThemeSelector.SelectedItem = item;
-                    break;
+                    if (item.Content.ToString() == currentTheme)
+                    {
+                        ThemeSelector.SelectedItem = item;
+                        break;
+                    }
                 }
-            }
 
-            currentBackground = LoadBackgroundPreference();
-            string brushKey = $"bg_{currentBackground}";
-            if (Application.Current.Resources[brushKey] is ImageBrush brush)
-            {
-                MainGrid.Background = brush;
-            }
+                currentBackground = LoadBackgroundPreference();
+                string brushKey = $"bg_{currentBackground}";
+                Console.WriteLine($"[BOOT] Attempting to load background: {brushKey}");
 
-            foreach (ComboBoxItem item in BackgroundSelector.Items)
-            {
-                if (item.Content.ToString().Replace(" ", "").ToLower() == currentBackground)
+                if (Application.Current.Resources[brushKey] is ImageBrush brush)
                 {
-                    BackgroundSelector.SelectedItem = item;
-                    break;
+                    MainGrid.Background = brush;
+                    Console.WriteLine($"[BOOT] Background applied: {brushKey}");
                 }
-            }
+                else
+                {
+                    Console.WriteLine($"[WARN] Background brush '{brushKey}' not found. Using fallback.");
+                    MainGrid.Background = Brushes.White;
+                }
 
-            Console.WriteLine($"[BOOT] Theme loaded: {currentTheme}, Background: {currentBackground}");
+                foreach (ComboBoxItem item in BackgroundSelector.Items)
+                {
+                    if (item.Content.ToString().Replace(" ", "").ToLower() == currentBackground)
+                    {
+                        BackgroundSelector.SelectedItem = item;
+                        break;
+                    }
+                }
+
+                Console.WriteLine($"[BOOT] Theme loaded: {currentTheme}, Background: {currentBackground}");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] BootSequence failed:\n{ex}");
+                MessageBox.Show("Boot sequence failed:\n" + ex.Message, "Startup Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
         private void PlayBootSound()
@@ -189,6 +213,27 @@ namespace PurpleNotebook
         {
             string timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             Console.WriteLine($"[BOOT] Notebook launched at {timestamp}");
+        }
+        private void PlaySound(string filename)
+        {
+            try
+            {
+                string soundPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Assets", filename);
+                if (File.Exists(soundPath))
+                {
+                    SoundPlayer player = new SoundPlayer(soundPath);
+                    player.Play();
+                    Console.WriteLine($"[SOUND] Played: {filename}");
+                }
+                else
+                {
+                    Console.WriteLine($"[WARN] Sound file missing: {filename}");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] Sound playback failed for {filename}:\n{ex}");
+            }
         }
 
         #endregion
@@ -221,5 +266,27 @@ namespace PurpleNotebook
         }
 
         #endregion
+        private void btnAddNote_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Console.WriteLine("[EVENT] New Note button clicked.");
+
+                // Clear the note editor and add timestamp header
+                NoteEditor.Clear();
+                NoteEditor.AppendText($"💜 {DateTime.Now:MMMM dd, yyyy @ hh:mm tt}\n\n");
+
+
+
+                // Play the sound
+                PlaySound("newnote.wav");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[ERROR] New Note crashed:\n{ex}");
+                MessageBox.Show("Something went wrong when creating a new note:\n" + ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+        }
+
     }
 }

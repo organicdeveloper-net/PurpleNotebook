@@ -1,11 +1,11 @@
 {
   "version": 3,
   "targets": {
-    "net9.0-windows7.0": {}
+    "net8.0-windows10.0.19041": {}
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net9.0-windows7.0": []
+    "net8.0-windows10.0.19041": []
   },
   "packageFolders": {
     "C:\\Users\\Watermelon-Apple\\.nuget\\packages\\": {}
@@ -13,24 +13,26 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Watermelon-Apple\\Desktop\\Purple Notebook\\NotebookApp.csproj",
-      "projectName": "NotebookApp",
-      "projectPath": "C:\\Users\\Watermelon-Apple\\Desktop\\Purple Notebook\\NotebookApp.csproj",
+      "projectUniqueName": "H:\\Purple Notebook PC\\Purple Notebook\\PurpleNotebook.csproj",
+      "projectName": "PurpleNotebook",
+      "projectPath": "H:\\Purple Notebook PC\\Purple Notebook\\PurpleNotebook.csproj",
       "packagesPath": "C:\\Users\\Watermelon-Apple\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Watermelon-Apple\\Desktop\\Purple Notebook\\obj\\",
+      "outputPath": "H:\\Purple Notebook PC\\Purple Notebook\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Watermelon-Apple\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\Watermelon-Apple\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net9.0-windows"
+        "net8.0-windows10.0.19041.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net9.0-windows7.0": {
-          "targetAlias": "net9.0-windows",
+        "net8.0-windows10.0.19041": {
+          "targetAlias": "net8.0-windows10.0.19041.0",
           "projectReferences": {}
         }
       },
@@ -47,8 +49,8 @@
       "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net9.0-windows7.0": {
-        "targetAlias": "net9.0-windows",
+      "net8.0-windows10.0.19041": {
+        "targetAlias": "net8.0-windows10.0.19041.0",
         "imports": [
           "net461",
           "net462",
@@ -60,8 +62,17 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.Windows.SDK.NET.Ref",
+            "version": "[10.0.19041.57, 10.0.19041.57]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.Windows.SDK.NET.Ref.Windows": {
             "privateAssets": "all"
           },
           "Microsoft.WindowsDesktop.App.WPF": {
