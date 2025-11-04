@@ -5,6 +5,13 @@
 ![Status](https://img.shields.io/badge/status-legacy--safe-green)
 
 A modular, legacy-safe note-taking application built with WPF and .NET 8 — designed for clarity, control, and creative expression.
+# Purple Notebook by Organic Developers
+
+Purple Notebook is a cross-platform note-taking app for iOS, iPadOS, and macOS, designed and maintained by [Organic Developers](https://organicdevelopers.net). This is the **official GitHub repository** for the Purple Notebook project, created to help students take focused, distraction-free notes.
+
+Visit the [Organic Developers website](https://organicdevelopers.net) for updates, documentation, and release notes.
+
+> This repository is not affiliated with any other Purple Notebook projects or forks. It is the original and actively maintained version by Organic Developers.
 
 ---
 ![Purple Notebook GUI](assets/screenshots/PurpleNotebook_GUI.png)
